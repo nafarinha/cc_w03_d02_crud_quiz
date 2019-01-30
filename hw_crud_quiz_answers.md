@@ -49,7 +49,7 @@ To be able to use the returned data in a meaningful way in a ruby program, we us
 
 >Q9. Why do we use prepared statements when performing database operations?
 
-Prepared statements offer the ability to optimize performance. They allow to separate the code from the data, by first sending the former (e.g. `.prepare()`) to the db server, taking placeholders instead of the data, and a second request will send the actual data (e.g. `.exec_prepared()`). Besides performance benefits, they also prevent SQL injection attacks.
+Prepared statements offer the ability to optimize performance. They allow to separate the code from the data, by first sending the former (e.g. `.prepare()`) to the db server, taking placeholders/bind parameters instead of the data, and a second request will send the actual data (e.g. `.exec_prepared()`). Besides performance benefits, they also prevent SQL injection attacks.
 
 ## Extension Questions
 
