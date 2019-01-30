@@ -37,11 +37,11 @@ The guard will evaluate if `options['id']` is `true` or `false`, and if true, it
 >Q7. Why are some of the CRUD actions represented by instance methods, and others, class methods?
 
 Instance methods apply only to an instance of the class while class methods provide functionality to the whole class.<br>
-We would use the former when the method's functionality is meant to be used only by the instantiated object (e.g. instance method `save()` inserts the instantiated object values into the database table) and the latter to provide functionality to the whole class and consequently its instantiated objects (e.g. the `self.find(id)` will find any of tuples in the db table which field id is equal to the method's argument).
+We would use the former when the method's functionality is meant to be used only by the instantiated object (e.g. instance method `save()` inserts the instantiated object values into the database table) and the latter to provide functionality to the whole class and consequently its instantiated objects (e.g. the `self.find(id)` will find any of tuples in the db table which field `id` is equal to the method's argument).
 
 >Q8. What type of data structure is returned by db.exec() and db.exec_prepared(), and how do we index into it to pull out a desired attribute?
 
-Both `db.exec()` and `db.exec_prepared()` will return a Result object, provided by the PG gem, similar the following example:<br>
+Both `db.exec()` and `db.exec_prepared()` will return a Result object, provided by the PG gem, similar to the following example:<br>
 ```#<PG::Result:0x007f9706112ea8 status=PGRES_TUPLES_OK ntuples=8 nfields=5 cmd_tuples=8>```<br>
 
 To be able to use the returned data in a meaningful way in a ruby program, we use the PG::Result class public instance method that returns tuple *n* as a hash (e.g. `result[0] → Hash`) that can then be passed to the map method from the Enumerable Module to instantiate a new Property custom object for each hash returned by the PG::Result above-mentioned method.
