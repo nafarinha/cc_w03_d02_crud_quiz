@@ -44,7 +44,7 @@ We would use the former when the method's functionality is meant to be used only
 Both `db.exec()` and `db.exec_prepared()` will return a Result object, provided by the PG gem, similar to the following example:<br>
 ```#<PG::Result:0x007f9706112ea8 status=PGRES_TUPLES_OK ntuples=8 nfields=5 cmd_tuples=8>```<br>
 
-To be able to use the returned data in a meaningful way in a ruby program, we use the PG::Result class public instance method that returns tuple *n* as a hash (e.g. `result[0] → Hash`) that can then be passed to the map method from the Enumerable Module to instantiate a new Property custom object for each hash returned by the PG::Result above-mentioned method.
+To be able to use the returned data in a meaningful way in a ruby program, we use the PG::Result class public instance method that returns tuple *n* as a hash (e.g. `result[0] → Hash`) that can then be passed to the map method from the Enumerable mixin to instantiate a new Property custom object for each hash returned by the PG::Result above-mentioned method.
 
 
 >Q9. Why do we use prepared statements when performing database operations?
